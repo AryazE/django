@@ -40,10 +40,10 @@ jobs:
       - name: Install and upgrade packaging tools
         run: python -m pip install --upgrade pip setuptools wheel
       - run: python -m pip install -r tests/requirements/py3.txt -e .
-    #   - name: Instrument code
-    #     uses: AryazE/auto-dylin/instrument@main
+      - name: Instrument code
+        uses: AryazE/auto-dylin/instrument@main
       - name: Run tests
         run: python tests/runtests.py -v2
-    #   - name: Report results
-    #     if: always()
-    #     uses: AryazE/auto-dylin/report@main
+      - name: Report results
+        if: always()
+        uses: AryazE/auto-dylin/report@main
